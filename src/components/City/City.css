@@ -49,6 +49,7 @@ th p{
 }
 @media only screen and (max-width: 800px) {
     .container{
+        align-content: center;
         margin-left: 0;
     }
   }
