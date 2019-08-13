@@ -32,7 +32,7 @@ class Table extends Component {
     const APIkey = '02f67365df77b06141b7abcc012fabd7';
     const that = this;
     const request = async () => {
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${'Long Beach'},${'Us'}&appid=${APIkey}`)
+        const response = await fetch(`//api.openweathermap.org/data/2.5/forecast?q=${'Long Beach'},${'Us'}&appid=${APIkey}`)
         const json = await response.json()
         //console.log(json.list)
         that.setState({

@@ -47,7 +47,7 @@ class City extends Component {
             const APIkey = '02f67365df77b06141b7abcc012fabd7';
             const that = this;
             const request = async () => {
-                const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.props.city},${this.props.country}&appid=${APIkey}`)
+                const response = await fetch(`//api.openweathermap.org/data/2.5/weather?q=${this.props.city},${this.props.country}&appid=${APIkey}`)
                 //const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${this.props.city},${this.props.country}&appid=${APIkey}`)
                 const json = await response.json()
                 console.log(json.weather[0].id)
