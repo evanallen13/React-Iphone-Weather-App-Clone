@@ -52,4 +52,7 @@ th p{
         align-content: center;
         margin-left: 0;
     }
+    .cityName{
+       margin: 0 auto;
+    }
   }
