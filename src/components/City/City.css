@@ -2,6 +2,7 @@
     margin: 0 auto;
     text-align: center;
     width: 50vw;
+    align-content: center;
 }
 .cityName{
     position: -webkit-sticky; /* Safari */
@@ -51,8 +52,5 @@ th p{
     .container{
         align-content: center;
         margin-left: 0;
-    }
-    .cityName{
-       margin: 0 auto;
     }
   }
