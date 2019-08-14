@@ -104,8 +104,8 @@ class City extends Component {
                         <div className="form-group">
                             <input type="text" className="form-control"  placeholder="City"></input>
                             <input type="text" className="form-control"  placeholder="Country"></input>
+                            <button type="submit" className="btn btn-primary">Submit</button>
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                     
                 </div>
