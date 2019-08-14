@@ -6,3 +6,7 @@
   background-color: rgba(0, 68, 255, 0.15);
   color: white;
 }
+form{
+  width: 35vw;
+  margin: 0 auto;
+}

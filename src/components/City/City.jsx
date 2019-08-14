@@ -96,18 +96,6 @@ class City extends Component {
                         country={this.state.country}
                         temp={this.state.temp}
                     ></Table>
-                    {/* <div className='footer'>
-                        <p>...</p>
-                        <img src="./imgs/hb.png" alt=""/>
-                    </div> */}
-                    <form>
-                        <div className="form-group">
-                            <input type="text" className="form-control"  placeholder="City"></input>
-                            <input type="text" className="form-control"  placeholder="Country"></input>
-                            <button type="submit" className="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
-                    
                 </div>
             </div>
         )
