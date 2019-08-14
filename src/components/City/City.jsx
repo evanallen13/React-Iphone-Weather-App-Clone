@@ -6,6 +6,7 @@ import weatherFunctions from './functions'
 class City extends Component {
     constructor(props) {
         super(props);
+        this.getWeather()
         this.state = { 
             city: undefined,
             country: undefined,
@@ -14,8 +15,9 @@ class City extends Component {
             high: undefined,
             low: undefined,
             icon: undefined,
-            iconCode: undefined
+            iconCode: undefined,
         }
+        this.getWeather()
     }
     changeBackground = () => {
         let icon = this.state.iconCode
@@ -41,16 +43,19 @@ class City extends Component {
             case icon >= 801 && icon <= 804:
                 document.body.style.backgroundImage = "url(../imgs/cloud.jpg)";
                 break;
+            default : 
+                document.body.style.backgroundImage = "url(../imgs/sun.jpg)";
+                break;
         }
     }
-    componentDidMount(){
+    getWeather(){
             const APIkey = '02f67365df77b06141b7abcc012fabd7';
             const that = this;
             const request = async () => {
                 const response = await fetch(`//api.openweathermap.org/data/2.5/weather?q=${this.props.city},${this.props.country}&appid=${APIkey}`)
                 //const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${this.props.city},${this.props.country}&appid=${APIkey}`)
                 const json = await response.json()
-                console.log(json.weather[0].id)
+                //console.log(json.weather[0].id)
                     that.setState({
                     city: this.props.city,
                     country: this.props.country,
@@ -59,13 +64,14 @@ class City extends Component {
                     high: weatherFunctions.shared.convertTemp(json.main.temp_max),
                     low: weatherFunctions.shared.convertTemp(json.main.temp_min),
                     icon: weatherFunctions.shared.weatherIcons(json.weather[0].id),
-                    iconCode: json.weather[0].id
+                    iconCode: json.weather[0].id,
                     })
                     this.changeBackground()
             }
             request();
     }
     render() { 
+        if(this.state.city !== undefined){
         return(
             <div className="container">
                 <div className="cards">
@@ -90,14 +96,23 @@ class City extends Component {
                         country={this.state.country}
                         temp={this.state.temp}
                     ></Table>
-                    <div className='footer'>
+                    {/* <div className='footer'>
                         <p>...</p>
                         <img src="./imgs/hb.png" alt=""/>
-                    </div>
+                    </div> */}
+                    <form>
+                        <div className="form-group">
+                            <input type="text" className="form-control"  placeholder="City"></input>
+                            <input type="text" className="form-control"  placeholder="Country"></input>
+                        </div>
+                        <button type="submit" className="btn btn-primary">Submit</button>
+                    </form>
                     
                 </div>
             </div>
         )
+    }else 
+        return(<div></div>)
     }
 }
 function dayOfWeek(){
@@ -105,6 +120,7 @@ function dayOfWeek(){
     const day = new Date()
     return days[ day.getDay() ] 
 }
+
  
 export default City;
 

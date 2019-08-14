@@ -30,23 +30,18 @@ tbody{
     overflow: hidden;
     color: white;
 }
-.footer{
-    border-top: 1px solid grey;
-    position: fixed;
-}
-.footer img{
-    display: inline;
-    margin-left: 35vw;
-}
-.footer p{
-    display: inline;
-    margin-left: 45vw;
-}
 table{
     margin-bottom: 0;
 }
 th p{
     margin: 0;
+}
+.form-group{
+    margin-bottom: 0;
+}
+form button{
+    margin-top: 0;
+    margin-bottom: 50px;
 }
 @media only screen and (max-width: 800px) {
     .container{
