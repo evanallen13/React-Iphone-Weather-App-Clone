@@ -8,8 +8,8 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = { 
-      city : 'los angeles',
-      country : 'us'
+      city : '',
+      country : ''
      }
      this.changeState = this.changeState.bind(this)
   }
@@ -27,26 +27,23 @@ class App extends Component {
           (<City
             city = {this.state.city}
             country = {this.state.country}
-          ></City>):null}
-
-          {/* <form>
-            <div className="form-group">
-              <input id='cityInput' type="text" className="form-control"  placeholder="City"></input>
-              <input id='countryInput' type="text" className="form-control"  placeholder="Country"></input>
+          ></City>):
+          null
+          }
+          <form>
+              <input type='text' id='city'></input>
+              <input type='text' id='country'></input>
               <button 
-                type="submit" 
-                className="btn btn-primary" 
-                onClick={()=> {
-                  const city = document.getElementById('cityInput').value
-                  const country = document.getElementById('countryInput').value
-                  if(city && country){
-                    this.changeState(city,country)
-                  }
-                }}
-                >Submit</button>
-            </div> 
-          </form> */}
+                className='btn btn-primary'
+                type='button'
+                onClick={()=> this.changeState(
+                    document.getElementById('city').value,
+                    document.getElementById('country')
+                )}
+              >Submit</button>
+            </form>
       </div>
+      
      );
   }
 }

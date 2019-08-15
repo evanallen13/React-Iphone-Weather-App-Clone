@@ -81,8 +81,7 @@ weatherByDays(json,that){
   let oneIcon = ''
   let twoIcon = ''
   let threeIcon = ''
-  json.map(function(e){
-    console.log(e.weather[0].id)
+  json.map((e) => {
     let date = moment.unix(e.dt)._d.getDate()
     if(date === TOMMOROW){
       tomIcon = e.weather[0].id
@@ -97,6 +96,7 @@ weatherByDays(json,that){
       threeIcon = e.weather[0].id
       three.push(e.main.temp)
     }
+    return null
   })
 
   that.setState({

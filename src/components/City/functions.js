@@ -34,7 +34,7 @@ class weatherFunctions{
         return result;
     }
     convertTemp = (temp) => {
-        let TEMP = Math.floor(((temp - 273.15) * 1.8) + 32)
+        let TEMP = Math.floor(((temp - 273.15) * 9/5) + 32)
         return TEMP;
     }
     getWeather = (props) => {
