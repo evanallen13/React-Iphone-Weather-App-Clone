@@ -29,7 +29,13 @@ class Table extends Component {
       tomorrow: [],
       tomorrowOne : [],
       tomorrowTwo : [],
-      tomorrowThree : []
+      tomorrowThree : [],
+
+      tomorrowIcon: undefined,
+      tomorrowOneIcon : undefined,
+      tomorrowTwoIcon : undefined,
+      tomorrowThreeIcon : undefined,
+      
     }
     this.getWeather(this.props)
   }
@@ -71,23 +77,37 @@ weatherByDays(json,that){
   let one = []
   let two = []
   let three = []
+  let tomIcon = ''
+  let oneIcon = ''
+  let twoIcon = ''
+  let threeIcon = ''
   json.map(function(e){
+    console.log(e.weather[0].id)
     let date = moment.unix(e.dt)._d.getDate()
     if(date === TOMMOROW){
+      tomIcon = e.weather[0].id
       tom.push(e.main.temp)
     }else if(date === ONE){
+      oneIcon = e.weather[0].id
       one.push(e.main.temp)
     }else if(date === TWO){
+      twoIcon = e.weather[0].id
       two.push(e.main.temp)
     }else if(date === THREE){
+      threeIcon = e.weather[0].id
       three.push(e.main.temp)
     }
   })
+
   that.setState({
     tomorrow: [this.dayArray(tom)[0],this.dayArray(tom)[1]],
     tomorrowOne : [this.dayArray(one)[0],this.dayArray(one)[1]],
     tomorrowTwo : [this.dayArray(two)[0],this.dayArray(two)[1]],
-    tomorrowThree : [this.dayArray(three)[0],this.dayArray(three)[1]]
+    tomorrowThree : [this.dayArray(three)[0],this.dayArray(three)[1]],
+    tomorrowIcon: tomIcon,
+    tomorrowOneIcon : oneIcon,
+    tomorrowTwoIcon : twoIcon,
+    tomorrowThreeIcon : threeIcon,
   })
 }
 dayArray(array){
@@ -102,6 +122,11 @@ dayArray(array){
     }
   });
   return [weatherFunctions.shared.convertTemp(max),weatherFunctions.shared.convertTemp(min)]
+}
+dayOfWeek(plus){
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const current = new Date()
+  return days[ current.getDay() + plus ] 
 }
   render() { 
     if(this.state.zero.time !== undefined){
@@ -118,15 +143,23 @@ dayArray(array){
       </thead>
           <TableBody
             tempMax={this.state.tomorrow}
+            day={this.dayOfWeek(0)}
+            icon={weatherFunctions.shared.weatherIcons(this.state.tomorrowIcon)}
           ></TableBody>
           <TableBody
             tempMax={this.state.tomorrowOne}
+            day={this.dayOfWeek(1)}
+            icon={weatherFunctions.shared.weatherIcons(this.state.oneIcon)}
           ></TableBody>
           <TableBody
             tempMax={this.state.tomorrowTwo}
+            day={this.dayOfWeek(2)}
+            icon={weatherFunctions.shared.weatherIcons(this.state.twoIcon)}
           ></TableBody>
           <TableBody
             tempMax={this.state.tomorrowThree}
+            day={this.dayOfWeek(3)}
+            icon={weatherFunctions.shared.weatherIcons(this.state.threeIcon)}
           ></TableBody>
     </table>
     </React.Fragment>

@@ -37,6 +37,36 @@ class weatherFunctions{
         let TEMP = Math.floor(((temp - 273.15) * 1.8) + 32)
         return TEMP;
     }
+    getWeather = (props) => {
+        const APIkey = '02f67365df77b06141b7abcc012fabd7';
+        const that = this;
+        const request = async () => {
+            const response = await fetch(`//api.openweathermap.org/data/2.5/forecast?q=${props.city},${props.country}&appid=${APIkey}`)
+            const json = await response.json()
+            this.weatherByDays(json.list,that)
+            //console.log(json.list)
+            that.setState({
+              zero:{
+                time: weatherFunctions.shared.convertTime(json.list[0].dt),
+                temp: weatherFunctions.shared.convertTemp(json.list[0].main.temp),
+                icon: weatherFunctions.shared.weatherIcons(json.list[0].weather[0].id)
+              },
+              one:{
+                time: weatherFunctions.shared.convertTime(json.list[1].dt),
+                temp: weatherFunctions.shared.convertTemp(json.list[1].main.temp),
+                icon: weatherFunctions.shared.weatherIcons(json.list[1].weather[0].id)
+              },
+              two:{
+                time: weatherFunctions.shared.convertTime(json.list[2].dt),
+                temp: weatherFunctions.shared.convertTemp(json.list[2].main.temp),
+                icon: weatherFunctions.shared.weatherIcons(json.list[2].weather[0].id)
+              },
+            })
+            
+        }
+        request();
+    }
+  
 }
 weatherFunctions.shared = new weatherFunctions();
 export default weatherFunctions;

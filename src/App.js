@@ -28,8 +28,8 @@ class App extends Component {
             city = {this.state.city}
             country = {this.state.country}
           ></City>):null}
-{/* 
-          <form>
+
+          {/* <form>
             <div className="form-group">
               <input id='cityInput' type="text" className="form-control"  placeholder="City"></input>
               <input id='countryInput' type="text" className="form-control"  placeholder="Country"></input>
@@ -44,7 +44,7 @@ class App extends Component {
                   }
                 }}
                 >Submit</button>
-            </div>
+            </div> 
           </form> */}
       </div>
      );

@@ -10,3 +10,6 @@ form{
   width: 35vw;
   margin: 0 auto;
 }
+#cityInput, #countryInput{
+  display: inline;
+}

@@ -12,16 +12,16 @@ class TableBody extends Component {
             <tbody>
                 <tr>
                 <td>
-                    <h6>Monday</h6>
+                    <h6>{this.props.day}</h6>
                 </td>
                 <td>
-                    <i className= {`wi wi-thunderstorm display-4`} style={{fontSize: 20 + "px"}}></i>
+                    <i className= {`wi ${this.props.icon} display-4`} style={{fontSize: 20 + "px"}}></i>
                 </td>
                 <td>
                     <p>{this.props.tempMax[0]}&deg;</p>
                 </td>
                 <td>
-                    <p>70&deg;</p>
+                    <p>{this.props.tempMax[1]}&deg;</p>
                 </td>
             </tr>
             </tbody>
