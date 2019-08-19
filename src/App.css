@@ -1,3 +1,8 @@
+body{
+  background-image: url('./imgs/sun.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
 .App {
   text-align: center;
   align-self: center;
@@ -5,4 +10,16 @@
   height: 100vh;
   background-color: rgba(0, 68, 255, 0.15);
   color: white;
+}
+form input{
+  border: 0;
+  border: .5px grey solid;
+  margin-left: 3px;
+  margin-right: 3px;
+  padding-left: 5px;
+  border-radius: 3px;
+}
+form{
+  padding-top: 10px;
+  opacity: .7;
 }

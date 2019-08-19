@@ -23,6 +23,18 @@ class App extends Component {
   render() { 
     return ( 
       <div className='App'>
+        <form>
+              <input type='text' id='city' placeholder='Enter City'></input>
+              <input type='text' id='country' placeholder='Enter Country'></input>
+              <button 
+                className='btn btn-success'
+                type='button'
+                onClick={()=> this.changeState(
+                    document.getElementById('city').value,
+                    document.getElementById('country').value
+                )}
+              >Submit</button>
+        </form>
         {this.state.city ? 
           (<City
             city = {this.state.city}
@@ -30,18 +42,6 @@ class App extends Component {
           ></City>):
           null
           }
-          <form>
-              <input type='text' id='city'></input>
-              <input type='text' id='country'></input>
-              <button 
-                className='btn btn-primary'
-                type='button'
-                onClick={()=> this.changeState(
-                    document.getElementById('city').value,
-                    document.getElementById('country')
-                )}
-              >Submit</button>
-            </form>
       </div>
       
      );
