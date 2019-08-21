@@ -46,7 +46,7 @@ class Table extends Component {
         const response = await fetch(`//api.openweathermap.org/data/2.5/forecast?q=${props.city},${props.country}&appid=${APIkey}`)
         const json = await response.json()
         this.weatherByDays(json.list,that)
-        //console.log(json.list)
+        // console.log(json.list)
         that.setState({
           zero:{
             time: weatherFunctions.shared.convertTime(json.list[0].dt),

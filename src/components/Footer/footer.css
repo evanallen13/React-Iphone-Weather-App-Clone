@@ -1,0 +1,15 @@
+.bullerContainer{
+    text-align: center;
+    width: 100vw;
+    position: fixed;
+    margin-top: 80%;
+    margin-bottom: 0;
+    height: 10vh;
+}
+.bullet{
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 60%;
+    height: 20px;
+
+}

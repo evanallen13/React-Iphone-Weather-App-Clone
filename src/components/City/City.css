@@ -5,10 +5,7 @@
     align-content: center;
 }
 .cityName{
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
     top: 0;
-    background-color: rgba(0, 68, 255, 0);
 }
 
 .tableTitle h4{
@@ -32,6 +29,8 @@ tbody{
 }
 table{
     margin-bottom: 0;
+    max-width: 800px;
+    margin: 0 auto;
 }
 th p{
     margin: 0;

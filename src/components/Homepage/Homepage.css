@@ -1,0 +1,59 @@
+#homepageTitle{
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    height: 10vh;
+    color: black;
+    padding-top: 4vh;
+    max-width: 550px;
+    margin: 0 auto;
+}
+#homepageTitle h4{
+    display: inline;
+}
+#homepageTitleAddBtn{
+    float: right;
+    margin-right: 20px;
+}
+#inputDiv{
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    height: 10vh;
+    display: none;
+    height: 6vh;
+    max-width: 550px;
+    margin: 0 auto;
+}
+.homepageCity{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    text-align: center;
+    height: 10vh;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+.homepageCity h4{
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#inputDiv input{
+    margin-right: 3px;
+    margin-right: 3px;
+    padding-left: 5px;  
+}
+.deleteBtn{
+    float: right;
+    margin-right: 10px;
+    color: red;
+    font-size: 50px;
+    opacity: .2;
+}
+.homepageCityTitle{
+    float: left;
+    margin-left: 10px;
+    padding-top: 4vh;
+}
+.deleteBtn:hover{
+    opacity: 1;
+}
