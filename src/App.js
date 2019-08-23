@@ -6,6 +6,7 @@ import "weather-icons/css/weather-icons.css";
 import Homepage from './components/Homepage/Homepage'
 import Footer from './components/Footer/footer'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Fire from './Fire'
 
 class App extends Component {
   constructor(props){
@@ -19,6 +20,7 @@ class App extends Component {
         },
       ]
      }
+     Fire.shared.readFromDb()
      this.addToState = this.addToState.bind(this)
      this.deleteFromState = this.deleteFromState.bind(this)
   }
@@ -42,7 +44,6 @@ class App extends Component {
   render() { 
     return ( 
       <div className='App'>
-        {console.log(this.state)}
         <Router>
           <Route exact path="/" component= {() => 
               <Homepage 

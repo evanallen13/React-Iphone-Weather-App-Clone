@@ -42,10 +42,13 @@ const Homepage = (props) =>{
                 ></input>
             </div>
             {props.cities.map((e)=> 
-                <div className="homepageCity" onClick = {
-                        ()=> window.location.href = `/${e.key}`
-                    }>
-                    <h4 className="homepageCityTitle">{e.city}</h4>
+                <div className="homepageCity">
+                    <h4 
+                        className="homepageCityTitle"
+                        onClick = {
+                            ()=> window.location.href = `/${e.key}`
+                        }
+                        >{e.city}</h4>
                     <h4 className="homepageCityTitle">{80}&deg;</h4>
                     <h4 className="deleteBtn"> &times; </h4>
                 </div>
